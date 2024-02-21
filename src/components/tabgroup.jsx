@@ -54,23 +54,23 @@ export default function MyTabs() {
         link: 'https://github.com/plusflora',
       },
     ],
-    Resume: [
-      {
-        id: 1,
-        title: '',
-        description: 'Lorem ipsum'
+    // Resume: [
+    //   {
+    //     id: 1,
+    //     title: '',
+    //     description: 'Lorem ipsum'
 
-      },
-      {
-        id: 2,
-        title: "Name of Job",
+    //   },
+    //   {
+    //     id: 2,
+    //     title: "Name of Job",
 
-      },
-    ],
+    //   },
+    // ],
   })
 
   return (
-    <div className="w-full max-w-md px-2 pt-0 pb-10 sm:px-0">
+    <div className="w-full min-w-full px-2 pt-0 pb-10 sm:px-0">
       <Tab.Group >
         <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
           {Object.keys(categories).map((category) => (
@@ -82,7 +82,7 @@ export default function MyTabs() {
                   'ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
                   selected
                     ? 'bg-white text-blue-700 shadow'
-                    : 'text-blue-100 hover:bg-white/[0.12] hover:text-white'
+                    : 'text-black hover:bg-white/[0.12] hover:text-white'
                 )
               }
             >
@@ -91,42 +91,40 @@ export default function MyTabs() {
           ))}
         </Tab.List>
         <Tab.Panels className="mt-2">
-  {Object.values(categories).map((posts, idx) => (
-    <Tab.Panel
-      key={idx}
-      className={classNames(
-        'rounded-xl bg-white p-3',
-        'ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
-      )}
-    >
-      <ul>
-        {posts.map((post) => (
-          <li
-            key={post.id}
-            className="relative rounded-md p-3 hover:bg-gray-100"
-          >
-            <a
-              href={post.link} // Provide the link here
-              target="_blank"
-              rel="noopener noreferrer"
+          {Object.values(categories).map((posts, idx) => (
+            <Tab.Panel
+              key={idx}
               className={classNames(
-                'block w-full h-full', // Make the entire block clickable
-                'text-black' // Adjust styles as needed
+                'rounded-xl bg-white p-3',
+                'ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
               )}
             >
-              <h3 className="text-sm font-medium leading-5">{post.title}</h3>
-              <p className="text-sm text-gray-600">{post.description}</p>
-              <p className="text-sm text-gray-600">{post.technologies}</p>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </Tab.Panel>
-  ))}
-</Tab.Panels>
-
+              <ul>
+                {posts.map((post) => (
+                  <li
+                    key={post.id}
+                    className="relative rounded-md p-3 hover:bg-gray-100"
+                  >
+                    <a
+                      href={post.link} // Provide the link here
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={classNames(
+                        'block w-full h-full', // Make the entire block clickable
+                        'text-black' // Adjust styles as needed
+                      )}
+                    >
+                      <h3 className="text-sm font-medium leading-5">{post.title}</h3>
+                      <p className="text-sm text-gray-600">{post.description}</p>
+                      <p className="text-sm text-gray-600">{post.technologies}</p>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </Tab.Panel>
+          ))}
+        </Tab.Panels>
       </Tab.Group>
     </div>
   )
 }
-
