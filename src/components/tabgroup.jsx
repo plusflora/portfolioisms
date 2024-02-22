@@ -54,25 +54,25 @@ export default function MyTabs() {
         link: 'https://github.com/plusflora',
       },
     ],
-    // Resume: [
-    //   {
-    //     id: 1,
-    //     title: '',
-    //     description: 'Lorem ipsum'
+    Resume: [
+      {
+        id: 1,
+        title: '',
+        description: 'Lorem ipsum'
 
-    //   },
-    //   {
-    //     id: 2,
-    //     title: "Name of Job",
+      },
+      {
+        id: 2,
+        title: "Name of Job",
 
-    //   },
-    // ],
+      },
+    ],
   })
 
   return (
     <div className="w-full min-w-full px-2 pt-0 pb-10 sm:px-0">
       <Tab.Group >
-        <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
+        <Tab.List className="min-w-max flex space-x-1 rounded-xl bg-blue-900/20 p-1">
           {Object.keys(categories).map((category) => (
             <Tab
               key={category}

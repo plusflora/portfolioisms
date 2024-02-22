@@ -45,5 +45,5 @@ body {
 }
 
 .tab-panel {
-  width: 500px; /* Adjust the width as needed */
+  width: 100%; /* Adjust the width as needed */
 }
