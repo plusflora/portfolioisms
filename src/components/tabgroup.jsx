@@ -64,9 +64,9 @@ export default function MyTabs() {
   })
 
   return (
-    <div className="w-full min-w-full px-2 pt-0 pb-10 sm:px-0">
+    <div className="widthers min-w-full px-2 pt-0 pb-10 sm:px-0">
       <Tab.Group >
-      <Tab.List className="grid grid-cols-3 gap-1 min-w-full rounded-xl bg-blue-900/20 p-1">
+      <Tab.List className="grid grid-cols-3 gap-1 min-w-max rounded-xl bg-blue-900/20 p-1 grow">
         {Object.keys(categories).map((category) => (
           <Tab
             key={category}

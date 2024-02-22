@@ -47,3 +47,7 @@ body {
 .tab-panel {
   width: 100%; /* Adjust the width as needed */
 }
+
+.widthers {
+  width: 65vw
+}
