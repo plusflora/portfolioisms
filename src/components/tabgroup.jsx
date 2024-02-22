@@ -53,43 +53,37 @@ export default function MyTabs() {
         title: "Github",
         link: 'https://github.com/plusflora',
       },
-    ],
-    Resume: [
       {
-        id: 1,
-        title: '',
-        description: 'Lorem ipsum'
-
+        id: 3,
+        title: "Email",
+        description: 'v.bouquet707@gmail.com',
       },
-      {
-        id: 2,
-        title: "Name of Job",
 
-      },
     ],
+
   })
 
   return (
     <div className="w-full min-w-full px-2 pt-0 pb-10 sm:px-0">
       <Tab.Group >
-        <Tab.List className="min-w-max flex space-x-1 rounded-xl bg-blue-900/20 p-1">
-          {Object.keys(categories).map((category) => (
-            <Tab
-              key={category}
-              className={({ selected }) =>
-                classNames(
-                  'w-full rounded-lg py-2.5 text-sm font-medium leading-5',
-                  'ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
-                  selected
-                    ? 'bg-white text-blue-700 shadow'
-                    : 'text-black hover:bg-white/[0.12] hover:text-white'
-                )
-              }
-            >
-              {category}
-            </Tab>
-          ))}
-        </Tab.List>
+      <Tab.List className="grid grid-cols-3 gap-1 min-w-full rounded-xl bg-blue-900/20 p-1">
+        {Object.keys(categories).map((category) => (
+          <Tab
+            key={category}
+            className={({ selected }) =>
+              classNames(
+                "w-full rounded-lg py-2.5 text-sm font-medium leading-5",
+                "ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2",
+                selected
+                  ? "bg-white text-blue-700 shadow"
+                  : "text-black hover:bg-white/[0.12] hover:text-white"
+              )
+            }
+          >
+            {category}
+          </Tab>
+        ))}
+      </Tab.List>
         <Tab.Panels className="mt-2">
           {Object.values(categories).map((posts, idx) => (
             <Tab.Panel
